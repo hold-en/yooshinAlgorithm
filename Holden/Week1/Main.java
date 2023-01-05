@@ -10,7 +10,8 @@ public class Main {
 
 //		System.out.println(minDeletionSize(test3));
 		
-		System.out.println(isPalindrome(1230));
+//		System.out.println(isPalindrome(1230));
+		System.out.println(singleNumber(new int[] {1,2,4,4,2}));
 	}
 	
 	// 944. Delete Columns to Make Sorted
@@ -57,5 +58,22 @@ public class Main {
     		}
 		}
         return true;
+    }
+    
+    // 136. Single Number
+    
+    // nums = [2,2,1] -> 1
+    //	nums = [4,1,2,1,2] -> 4
+    // nums = [1] -> 1
+    public static int singleNumber(int[] nums) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int num : nums){
+            map.put(num, map.getOrDefault(num,0) + 1);
+        }
+        for(int ans : map.keySet()){
+            if(map.get(ans) == 1)
+                return ans;
+        }
+        return 0;
     }
 }
