@@ -4,14 +4,10 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		String[] test1 = {"cba","daf","ghi"};
-		String[] test2 = {"a","b"};
-		String[] test3 = {"zyx","wvu","tsr"};
-
-//		System.out.println(minDeletionSize(test3));
-		
+//		System.out.println(minDeletionSize(new Stinrg[] {"cba","daf","ghi"));		
 //		System.out.println(isPalindrome(1230));
-		System.out.println(singleNumber(new int[] {1,2,4,4,2}));
+//		System.out.println(singleNumber(new int[] {1,2,4,4,2}));
+		System.out.println(canBeEqual(new int[] {1,3,2,4}, new int[] {1,4,3,2}));
 	}
 	
 	// 944. Delete Columns to Make Sorted
@@ -75,5 +71,19 @@ public class Main {
                 return ans;
         }
         return 0;
+    }
+    
+    // 1460. Make Two Arrays Equal by Reversing Subarrays
+    
+    // target = [1,2,3,4], arr = [2,4,1,3] -> true
+    // target = [7], arr = [7] -> true
+    // target = [3,7,9], arr = [3,7,11] -> false
+    public static boolean canBeEqual(int[] target, int[] arr) {
+    	Arrays.sort(target);
+    	Arrays.sort(arr);
+    	if(Arrays.equals(target, arr)) {
+    		return true;
+    	}
+        return false;
     }
 }
